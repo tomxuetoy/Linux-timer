@@ -1,0 +1,7 @@
+trial_timer
+===========
+
+to learn how Linux timer works
+
+How to check 'HZ' of the machine?
+cat /boot/config-`uname -r` | grep '^CONFIG_HZ='

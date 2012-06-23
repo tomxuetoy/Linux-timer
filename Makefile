@@ -1,5 +1,7 @@
 MODULE_NAME := timer_kernel
+obj-m += $(MODULE_NAME).o
 
+MODULE_NAME := timer_kernel_2
 obj-m += $(MODULE_NAME).o
 
 SUBARCH := $(shell uname -m | sed -e s/i.86/i386/)
@@ -10,7 +12,6 @@ KSRC = /lib/modules/$(KVER)/build
 
 
 all: modules strip
-	@echo $(SUBARCH)
 
 modules:
 	$(MAKE) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) -C $(KSRC) M=$(shell pwd) modules
