@@ -1,7 +1,37 @@
-trial_timer
-===========
-
-to learn how Linux timer works
-
 How to check 'HZ' of the machine?
-cat /boot/config-`uname -r` | grep '^CONFIG_HZ='
+    Platform: Beagle Board
+    root@omap:/home/ubuntu/tom/test# cat /boot/config-`uname -r` | grep '^CONFIG_HZ='                                                                     
+    CONFIG_HZ=128
+
+
+
+
+rtc_timer run result on Beagle Board: seems to give 4 outputs each second (4 HZ)
+    root@omap:/home/ubuntu/tom/test# ./rtc_timer                                                                                                      
+    Current time is Fri Jul 13 05:35:15 2012                                                                                                              
+    data 448                                                                                                                                              
+    Current time is Fri Jul 13 05:35:15 2012                                                                                                              
+    data 448                                                                                                                                              
+    Current time is Fri Jul 13 05:35:15 2012                                                                                                              
+    data 448                                                                                                                                              
+    Current time is Fri Jul 13 05:35:15 2012                                                                                                              
+    data 448                                                                                                                                              
+    Current time is Fri Jul 13 05:35:16 2012                                                                                                              
+    data 448                                                                                                                                              
+    Current time is Fri Jul 13 05:35:16 2012                                                                                                              
+    data 448                                                                                                                                              
+    Current time is Fri Jul 13 05:35:16 2012                                                                                                              
+    data 448                                                                                                                                              
+    Current time is Fri Jul 13 05:35:16 2012                                                                                                              
+    data 448                                                                                                                                              
+    Current time is Fri Jul 13 05:35:17 2012                                                                                                              
+    data 448                                                                                                                                              
+    Current time is Fri Jul 13 05:35:17 2012                                                                                                              
+    data 448                                                                                                                                              
+    Current time is Fri Jul 13 05:35:17 2012                                                                                                              
+    data 448                                                                                                                                              
+    Current time is Fri Jul 13 05:35:17 2012                                                                                                              
+    data 448                                                                                                                                              
+    Current time is Fri Jul 13 05:35:18 2012                                                                                                              
+    data 448                            
+    ...

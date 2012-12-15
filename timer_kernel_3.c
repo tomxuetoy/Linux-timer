@@ -15,21 +15,26 @@
 MODULE_LICENSE("GPL");
 
 static struct timer_list timer;
-static char* msg = "hello world";
+static char* msg = "tomxue1: hello world";
+
+int count_tomxue = 0;
 
 static void print_func(unsigned long lparam){
     char* str = (char*)lparam;
-    printk("%s %ld\n",str,jiffies);
+    printk("tomxue1: %s %ld\n",str,jiffies);
 
     init_timer(&timer);
-    timer.expires = jiffies + 5*HZ;
+    timer.expires = jiffies + 2*HZ;
     timer.function = print_func;
     timer.data = (unsigned long) msg; 
     add_timer(&timer);
+
+    count_tomxue = count_tomxue + 1;
+    printk("tomxue1: count_tomxue = %d\n", count_tomxue);
 }
 
 static int hello_init(void){
-    printk("timer test\n");
+    printk("tomxue1: timer test\n");
     init_timer(&timer);
     timer.data = (unsigned long) msg;
     timer.expires = jiffies + 1*HZ; 	//start below function 1 second later, by Tom Xue
@@ -41,7 +46,7 @@ static int hello_init(void){
 
 static void hello_exit(void){
     del_timer(&timer);
-    printk("good bye\n");
+    printk("tomxue1: good bye\n");
  
 }
 
