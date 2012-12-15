@@ -1,3 +1,7 @@
+/* The original code is from link: 
+ * http://kasicass.blog.163.com/blog/static/395619200862632924594/ 
+ * some changes were made by Tom Xue
+ * */
 #include <linux/rtc.h>
 #include <sys/ioctl.h>
 #include <sys/time.h>
